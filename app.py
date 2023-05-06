@@ -24,7 +24,7 @@ def login():
 	if result is not None:
 		return redirect(url_for('dashboard'))
 	else:
-		return "Invalid username or email"
+		return render_template('login_faculty.html', error='Invalid username or email')
 	
 @app.route('/login_admin', methods=['POST'])
 def login():
@@ -41,7 +41,7 @@ def login():
 	if result is not None:
 		return redirect(url_for('dashboard'))
 	else:
-		return "Invalid username or email"
+		return render_template('login_admin.html', error='Invalid username or email')
 	
 @app.route('/login_student', methods=['POST'])
 def login():
@@ -58,7 +58,7 @@ def login():
 	if result is not None:
 		return redirect(url_for('dashboard'))
 	else:
-		return "Invalid username or email"
+		return render_template('login_student.html', error='Invalid username or email')
 
 @app.route('/dashboard')
 def dashboard():
