@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+ 
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+  }
+  
+  h1, h2, h3 {
+    font-weight: normal;
+    margin-bottom: 20px;
+  }
+  
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  
+  header {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+  }
+  
+  header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+
+  nav ul {
+    display: flex;
+    float: right;
+    margin-top: -40px;
+  }
+  
+  nav li {
+    margin-right: 20px;
+ 
+  }
+  
+  nav a {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  form {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  input[type="text"] {
+    width: 300px;
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  button[type="submit"] {
+    padding: 5px 10px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #003366;
+    color: white;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+  
+  tfoot {
+    font-weight: bold;
+  }
+  
+
+  footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    background-position-y:0% ;
+  }
+  
+  footer p {
+    margin: 0;
+    font-size: 14px;
+  }
