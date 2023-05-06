@@ -25,6 +25,40 @@ def login():
 		return redirect(url_for('dashboard'))
 	else:
 		return "Invalid username or email"
+	
+@app.route('/login_admin', methods=['POST'])
+def login():
+	username = request.form['username']
+	password = request.form['password']
+
+	# Connect to the database and check if the username and email match
+	conn = sqlite3.connect('users.db')
+	c = conn.cursor()
+	c.execute("SELECT * FROM administration WHERE username = ? AND password = ?", (username, password))
+	result = c.fetchone()
+	conn.close()
+
+	if result is not None:
+		return redirect(url_for('dashboard'))
+	else:
+		return "Invalid username or email"
+	
+@app.route('/login_student', methods=['POST'])
+def login():
+	username = request.form['username']
+	password = request.form['password']
+
+	# Connect to the database and check if the username and email match
+	conn = sqlite3.connect('users.db')
+	c = conn.cursor()
+	c.execute("SELECT * FROM students WHERE username = ? AND password = ?", (username, password))
+	result = c.fetchone()
+	conn.close()
+
+	if result is not None:
+		return redirect(url_for('dashboard'))
+	else:
+		return "Invalid username or email"
 
 @app.route('/dashboard')
 def dashboard():
