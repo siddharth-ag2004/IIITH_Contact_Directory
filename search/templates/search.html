@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    
+    <link rel="stylesheet" href="static/search.css">
+    
+</head>
+<body>
+    <h1>Search Page</h1>
+
+    <form method="post" action="/search"  >
+        <label for="name" style="flex:1;">Name:</label>
+        <input type="text" id="name" name="name" >
+    
+        <label for="username" style="flex:1;">Email:</label>
+        <input type="text" id="username" name="username" >
+    
+        <label for="branch" style="flex:1;">Branch:</label>
+        <select id="branch" name="branch" >
+            <option value="">--Select Branch--</option>
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="CSD">CSD</option>
+            <option value="ECD">ECD</option>
+            <option value="CHD">CHD</option>
+            <option value="CLD">CLD</option>
+            <option value="CND">CND</option>
+        </select>
+    
+        <label for="batch" style="flex:1;">Batch:</label>
+        <select id="batch" name="batch" >
+            <option value="">--Select Batch--</option>
+            <option value="UG1">UG1</option>
+            <option value="UG2">UG2</option>
+            <option value="UG3">UG3</option>
+            <option value="UG4">UG4</option>
+            <option value="UG5">UG5</option>
+            <option value="PG1">PG1</option>
+            <option value="PG2">PG2</option>
+        </select>
+    
+        <input type="submit" value="Search">
+    </form>
+    
+    
+
+{% if results %}
+<div class="search-results">
+  <table >
+    <thead>
+      <tr>
+        <th>Roll No</th>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Branch</th>
+        <th>Batch</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for result in results %}
+      <tr>
+        <td>{{ result[0] }}</td>
+        <td>{{ result[5] }}</td>
+        <td>{{ result[1] }}</td>
+        <td>{{ result[3] }}</td>
+        <td>{{ result[4] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+
+
+
+
+    <footer>
+        <p>2023 IIIT Contact Directory</p>
+        <p>&copy; International Institute of Information Technology, Hyderabad</p>
+      </footer>
+
+</body>
+</html>
+
+
+
