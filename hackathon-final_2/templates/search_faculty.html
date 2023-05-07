@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+
+    <link rel="stylesheet" href="static/search.css">
+    <link rel="icon" type="image/x-icon" href="../static/favicon1.jpg" style="border-radius: 50%;">
+
+<body>
+    <h1>Faculty Search Page</h1>
+    <form method="post" action="/filter_faculty">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+
+        
+
+        <label for="lab">Lab:</label>
+        <select id="lab" name="lab">
+            <option value="">--Select Lab--</option>
+            <option value="SPCRC">SPCRC</option>
+            <option value="LTRC">LTRC</option>
+            <option value="HSRG">HSRG</option>
+            <option value="CogSci">CogSci</option>
+            <option value="CVEST">CVEST</option>
+            <option value="CVIT">CVIT</option>
+            <option value="MLL">MLL</option>
+            <option value="EERC">EERC</option>
+            <option value="CSTAR">CSTAR</option>
+            <option value="CQST">CQST</option>
+            <option value="CCNSB">CCNSB</option>
+            <option value="DSAC">DSAC</option>
+        </select>
+
+        <label for="position">Position:</label>
+        <select id="position" name="position">
+            <option value="">--Select Position--</option>
+            <option value="assistant professor">Assistant Professor</option>
+            <option value="visiting faculty">Visiting Faculty</option>
+            <option value="associate professor">Associate Professor</option>
+            <option value="professor">Professor</option>
+            <option value="visiting assistant professor">Visiting Assistant Professor</option>
+            <option value="research professor">Research Professor</option>
+        </select>
+
+        <label for="office_hours">Office Hours:</label>
+        <select id="office_hours" name="office_hours">
+            <option value="">--Select--</option>
+            <option value="9:00-10:00">9:00-10:00</option>
+            <option value="10:00-11:00">10:00-11:00</option>
+            <option value="11:00-12:00">11:00-12:00</option>
+            <option value="12:00-13:00">12:00-13:00</option>
+            <option value="13:00-14:00">13:00-14:00</option>
+            <option value="14:00-15:00">14:00-15:00</option>
+            <option value="15:00-16:00">15:00-16:00</option>
+            <option value="16:00-17:00">16:00-17:00</option>
+            <option value="17:00-18:00">17:00-18:00</option>
+        </select>
+
+        <input type="submit" value="Search">
+    </form>
+
+    {% if results %}
+        <div class="search-results">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Lab</th>
+                    <th>Position</th>
+                    <th>Office Hours</th>
+                    <th>Mobile</th>
+                    <th>Email</th>
+                </tr>
+                {% for result in results %}
+                    <tr>
+                        <td>{{ result[4] }}</td>
+                        <td>{{ result[7] }}</td>
+                        <td>{{ result[6] }}</td>
+                        <td>{{ result[5] }}</td>
+                        <td>{{ result[3] }}</td>
+                        <td>{{ result[1] }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    {% endif %}
+
+
+      <footer>
+        <p>2023 IIIT Contact Directory</p>
+        <p>&copy; International Institute of Information Technology, Hyderabad</p>
+      </footer>
+
+
+</body>

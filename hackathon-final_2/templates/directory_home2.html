@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>IIIT Contact Directory</title>
+  <link rel="stylesheet" type="text/css" href="../static/directory_home.css">
+  <link rel="icon" type="image/x-icon" href="../static/favicon1.jpg" style="border-radius: 50%;">
+
+</head>
+
+<body>
+  <header>
+    <img>
+    <h1 style="font-size: 50px; font-weight: bold; text-decoration: underline;">IIIT Contact Directory</h1>
+  </header>
+  <br><br>
+  <main>
+    <div class="login-options">
+      <a href="{{ url_for('directory_student1') }}" class="login-option student">
+        <span class="icon"><i class="fas fa-user-graduate"></i></span>
+        <span class="label">Student Directory</span>
+      </a>
+      <a href="{{ url_for('directory_student2') }}" class="login-option student_edit">
+        <span class="icon"><i class="fas fa-user-cog"></i></span>
+        <span class="label">Edit Student Directory</span>
+      </a>
+      <a href="{{ url_for('directory_faculty1') }}" class="login-option faculty1">
+        <span class="icon"><i class="fas fa-chalkboard-teacher"></i></span>
+        <span class="label">Faculty Directory</span>
+      </a>
+      <a href="{{ url_for('directory_faculty2') }}" class="login-option student_edit">
+        <span class="icon"><i class="fas fa-user-cog"></i></span>
+        <span class="label">Edit Faculty Directory</span>
+      </a>
+      <a href="{{ url_for('search_student') }}" class="login-option faculty2">
+        <span class="icon"><i class="fas fa-chalkboard-teacher"></i></span>
+        <span class="label">Search Student</span>
+      </a>
+
+      <a href="{{ url_for('search_faculty') }}" class="login-option faculty2">
+        <span class="icon"><i class="fas fa-chalkboard-teacher"></i></span>
+        <span class="label">Search Faculty</span>
+      </a>
+    </div>
+  </main>
+
+
+  <footer>
+    <p>2023 IIIT Contact Directory</p>
+    <p>&copy; International Institute of Information Technology, Hyderabad</p>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/1234567890.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

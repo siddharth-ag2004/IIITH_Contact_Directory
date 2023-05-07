@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IIIT Student Directory</title>
+    <link rel="stylesheet" type="text/css" href="../static/directory.css">
+    <link rel="icon" type="image/x-icon" href="../static/favicon1.jpg" style="border-radius: 50%;">
+
+  </head>
+  <body>
+    <header>
+        <h1>IIIT Faculty Directory</h1>
+      </header>
+        <h2 align="center">Faculty Directory</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Lab</th>
+              <th>Office Hours</th>
+              <th>Faculty Phone Number</th>
+              <th>Post</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in faculty_data %}
+            <tr>
+              <td>{{ row[4] }}</td>
+              <td>{{ row[1] }}</td>
+              <td>{{ row[7] }}</td>
+              <td>{{ row[5] }}</td>
+              <td>{{ row[3] }}</td>
+              <td>{{ row[6] }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </main>
+      
+      <footer>
+        <p>2023 IIIT Contact Directory</p>
+        <p>&copy; International Institute of Information Technology, Hyderabad</p>
+      </footer>      
+    
+    <script src="script.js"></script>
+  </body>
+</html>

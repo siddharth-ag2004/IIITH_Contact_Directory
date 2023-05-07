@@ -1,0 +1,248 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-image: url("searchbg1.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Header Styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 0;
+  position: relative;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* header nav {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+} */
+
+header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+header ul li {
+  margin-right: 1rem;
+}
+
+header ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 1rem;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+header ul li a:hover {
+  background-color: #fff;
+  color: #333;
+  border-radius: 5px;
+}
+
+/* Main Styles */
+main {
+  margin: 2rem 0;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+main h2 {
+  margin-top: 0;
+}
+
+/* Table Styles */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td,
+table th {
+  padding: 0.5rem;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+table th {
+  background-color: #333;
+  color: #fff;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+form label {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form input[type="submit"],
+form button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover,
+form button:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+footer p {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+width: 150px;
+height: 50px;
+cursor: pointer;
+display: flex;
+align-items: center;
+background: red;
+border: none;
+border-radius: 5px;
+box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+background: #e62222;
+}
+
+button, button span {
+transition: 200ms;
+}
+
+button .text {
+transform: translateX(35px);
+color: white;
+font-weight: bold;
+}
+
+button .icon {
+position: absolute;
+border-left: 1px solid #c41b1b;
+transform: translateX(110px);
+height: 40px;
+width: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+button svg {
+width: 15px;
+fill: #eee;
+}
+
+/* button:hover {
+background: #ff3636;
+} */
+
+button:hover .text {
+color: transparent;
+}
+
+button:hover .icon {
+width: 150px;
+border-left: none;
+transform: translateX(0);
+}
+
+button:focus {
+outline: none;
+}
+
+button:active .icon svg {
+transform: scale(0.8);
+}
+
+.cssbuttons-io-button {
+display: flex;
+align-items: center;
+font-family: inherit;
+font-weight: 500;
+font-size: 16px;
+padding: 0.7em 1.4em 0.7em 1.1em;
+color: white;
+background: #ad5389;
+background: linear-gradient(0deg, rgba(20,167,62,1) 0%, rgba(102,247,113,1) 100%);
+border: none;
+box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+letter-spacing: 0.05em;
+border-radius: 20em;
+}
+
+.cssbuttons-io-button svg {
+margin-right: 6px;
+}
+
+.cssbuttons-io-button:hover {
+box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+}
+
+.cssbuttons-io-button:active {
+box-shadow: 0 0.3em 1em -0.5em #14a73e98;
+}
+
+td:nth-child(6) {
+border: none;
+}
