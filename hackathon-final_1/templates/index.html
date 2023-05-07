@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IIIT Contact Directory</title>
+    <link rel="stylesheet" type="text/css" href="../static/index.css">
+    <link rel="icon" type="image/png" href="../static/favicon2.jpg">
+  </head>
+  <body>
+    <header>
+      <img src="../static/iiit-hyd.png" alt="IIITH" width="60" height="60" style="display: inline-block;margin-right: 10px;">
+			<h1 style="display: inline-block;font-size: 50px; font-weight: bold; text-decoration: underline;">IIIT Contact Directory</h1>
+      <img src="../static/iiit-hyd.png" alt="IIITH" width="60" height="60" style="display: inline-block;margin-right: 10px;">
+      <br><br>
+    </header> 
+    <main>
+      <img src="../static/iiit-hyd1.png" alt="IIITH" width="600" height="600" style="float: left; margin-right: 10px;">
+      <br><br>
+      <h1 style="font-weight: bold;font-size: 40px;margin-right: 500px;text-decoration: underline;">WELCOME!</h1>
+      <br><br><br><br>
+      <div class="login-options" methods="POST" action="/index" style="display: inline-block;">
+        <form methods="POST" action="/2">
+          <button class="login-option student">
+            <span class="icon"><i class="fas fa-user-graduate"></i></span>
+            <span class="label">Login as Student</span>
+          </button>
+        </form>
+        <form methods="POST" action="/1">
+          <button class="login-option faculty" >
+            <span class="icon"><i class="fas fa-chalkboard-teacher"></i></span>
+            <span class="label">Login as Faculty</span>
+          </button>
+        </form>
+        <form methods="POST" action="/3">
+          <button class="login-option admin" >
+            <span class="icon"><i class="fas fa-user-cog"></i></span>
+            <span class="label">Login as Administrator</span>
+          </button>
+        </form>
+      </div>
+    </main>
+    
+      
+    
+    <footer>
+        <p>2023 IIIT Contact Directory</p>
+        <p>&copy; International Institute of Information Technology, Hyderabad</p>
+      </footer>
+
+    <!-- <script src="https://kit.fontawesome.com/1234567890.js" crossorigin="anonymous"></script> -->
+  </body>
+</html>

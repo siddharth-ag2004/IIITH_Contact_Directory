@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+            background-color: rgb(4, 133, 156);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        label {
+            font-size: 1.2rem;
+            margin-right: 1rem;
+        }/* 
+        input[type="text"], select {
+            padding: 0.5rem;
+            font-size: 1rem;
+            margin-right: 1rem;
+        }
+        input[type="submit"] {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #0069d9;
+        } */
+        .search-results {
+            margin-top: 2rem;
+        }
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            margin-left: 6%;
+            /* margin-bottom: 50px; */
+        }
+        th, td {
+            padding: 0.5rem;
+            text-align: center;
+            border: 2px solid #ddd;
+            /* border-radius: 10px; */
+        }
+        th {
+            background-color:  rgb(2, 46, 54);
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        @media (min-width: 768px) {
+            form {
+                flex-direction: row;
+            }
+            input[type="text"], select {
+                width: 10%;
+                margin-right: 20px;
+                margin-left: 0px;
+            }
+        }
+        
+		body {
+			background-color: #f5f5f5;
+			font-family: Arial, sans-serif;
+		}
+		h1 {
+			text-align: center;
+			margin-top: 30px;
+		}
+        footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    /* bottom: 0; */
+    width: 100%;
+    /* margin-top: 300px; */
+    margin-top: 670px;
+  }
+  
+  footer p {
+    margin: 0;
+    font-size: 14px;
+  }
+
+    </style>
+</head>
+<body>
+    <h1>Search Page</h1>
+    <!-- <form method="post" action="/search">
+    
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <label for="branch">Branch:</label>
+        <select id="branch" name="branch">
+            <option value="">--Select Branch--</option>
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="CSD">CSD</option>
+            <option value="ECD">ECD</option>
+            <option value="CHD">CHD</option>
+            <option value="CLD">CLD</option>
+            <option value="CND">CND</option>
+        </select>
+        <label for="batch">Batch:</label>
+        <select id="batch" name="batch">
+            <option value="">--Select Batch--</option>
+            <option value="UG1">UG1</option>
+            <option value="UG2">UG2</option>
+            <option value="UG3">UG3</option>
+            <option value="UG4">UG4</option>
+            <option value="UG5">UG5</option>
+            <option value="PG1">PG1</option>
+            <option value="PG2">PG2</option>
+        </select>
+        <input type="submit" value="Search">
+    </form> -->
+
+    <form method="post" action="/filter_faculty" style="display:flex; flex-wrap:wrap; width: 90%;margin-left: 5%;margin-top: 70px;" >
+        <label for="name" style="flex:1;">Name:</label>
+        <input type="text" id="name" name="name" style="flex:3; margin-right:20px;margin-left:5px;">
+    
+        <label for="email" style="flex:1;">Email:</label>
+        <input type="text" id="email" name="email" style="flex:3; margin-right:20px;margin-left:5px;">
+    
+        <label for="branch" style="flex:1;">Branch:</label>
+        <select id="branch" name="branch" style="flex:3; margin-right:20px;margin-left:5px;">
+            <option value="">--Select Branch--</option>
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="CSD">CSD</option>
+            <option value="ECD">ECD</option>
+            <option value="CHD">CHD</option>
+            <option value="CLD">CLD</option>
+            <option value="CND">CND</option>
+        </select>
+    
+        <label for="batch" style="flex:1;">Batch:</label>
+        <select id="batch" name="batch" style="flex:3; margin-right:20px;margin-left:5px;">
+            <option value="">--Select Batch--</option>
+            <option value="UG1">UG1</option>
+            <option value="UG2">UG2</option>
+            <option value="UG3">UG3</option>
+            <option value="UG4">UG4</option>
+            <option value="UG5">UG5</option>
+            <option value="PG1">PG1</option>
+            <option value="PG2">PG2</option>
+        </select>
+    
+        <input type="submit" value="Search" style="flex:1;">
+    </form>
+    
+    
+
+{% if results %}
+<div class="search-results">
+  <table >
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Branch</th>
+        <th>Batch</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for result in results %}
+      <tr>
+        <td>{{ result[5] }}</td>
+        <td>{{ result[1] }}</td>
+        <td>{{ result[3] }}</td>
+        <td>{{ result[4] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+
+
+    <!-- {% if results %}
+        <div class="search-results">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Branch</th>
+                        <th>ID</th>
+                        <th>Uses</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for result in results %}
+                        <tr>
+                            <td>{{ result[0] }}</td>
+                            <td>{{ result[1] }}</td>
+                            <td>{{ result[2] }}</td>
+                            <td>{{ result[3] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %} -->
+
+    <footer>
+        <p>2023 IIIT Contact Directory</p>
+        <p>&copy; International Institute of Information Technology, Hyderabad</p>
+      </footer>
+
+</body>
+</html>
+
+
+
+<!-- 
+<body>
+    <h1>Search Page</h1>
+    <form method="post" action="/search">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <label for="branch">Branch:</label>
+        <select id="branch" name="branch">
+            <option value="">--Select Branch--</option>
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="CSD">CSD</option>
+            <option value="ECD">ECD</option>
+            <option value="CHD">CHD</option>
+            <option value="CLD">CLD</option>
+            <option value="CND">CND</option>
+        </select>
+        <input type="submit" value="Search">
+    </form>
+    {% if results %}
+<div class="search-results">
+  <table border="1" style="text-align: center;">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Branch</th>
+        <th>Batch</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for result in results %}
+      <tr>
+        <td>{{ result[5] }}</td>
+        <td>{{ result[1] }}</td>
+        <td>{{ result[3] }}</td>
+        <td>{{ result[4] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+</body> -->
