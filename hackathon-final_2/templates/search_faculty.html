@@ -9,6 +9,11 @@
     <link rel="icon" type="image/x-icon" href="../static/favicon1.jpg" style="border-radius: 50%;">
 
 <body>
+
+    <form method="get" action="/dashboard" >
+        <button style="height: 50px; width: 100px;">Dashboard</button>
+    </form>
+
     <h1>Faculty Search Page</h1>
     <form method="post" action="/filter_faculty">
         <label for="name">Name:</label>
@@ -84,6 +89,7 @@
                 {% endfor %}
             </table>
         </div>
+    
     {% endif %}
 
 
